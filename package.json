@@ -1,0 +1,22 @@
+{
+  "name": "leetcode-challenge",
+  "version": "1.0.0",
+  "author": "Wonkook Lee const.wonkook@gmail.com",
+  "description": "Personal LeetCode Coding Challenge w/JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "keywords": [
+    "leetcode",
+    "LeetCode",
+    "oneook"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^28.1.0"
+  }
+}
