@@ -7,3 +7,7 @@ test("'babad' returns 'bab'", () => {
 test("'cbbd' returns 'bb'", () => {
   expect(longestPalindrome('cbbd')).toEqual('bb');
 });
+
+test("'forgeeksskeegfor' returns 'geeksskeeg'", () => {
+  expect(longestPalindrome('forgeeksskeegfor')).toEqual('geeksskeeg');
+});
