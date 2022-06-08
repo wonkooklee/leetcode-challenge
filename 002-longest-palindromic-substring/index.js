@@ -20,31 +20,27 @@
  */
 
 const longestPalindrome = function (s) {
-  let sp = 0; // pallindrome의 위치 인덱스
-  let max = 1; // 가장 긴 palindrome의 길이 (한 글자일 수도 있으니)
+  let startPoint = 0;
+  let longestLength = 1;
 
-  /**
-   * 양 끝의 포인터가 가르키는 인덱스 값이 일치하면 포인터의 범위를 늘린다.
-   */
   function expandPointer (left, right) {
-    // 인자로 주어진 문자열의 범위 내 끝과 끝이 일치할 경우 loop
     while (right < s.length && left >= 0 && s[left] === s[right]) {
       const currentLength = right - left + 1;
-      if (currentLength > max) {
-        sp = left; // 
-        max = currentLength; // 최대값 갱신
+      if (currentLength > longestLength) {
+        startPoint = left;
+        longestLength = currentLength
       }
-      left--; // 좌측 포인터를 왼쪽 방향으로 늘린다.
-      right++; // 우측 포인터를 오른쪽 방향으로 늘린다.
+      left--
+      right++
     }
   }
 
   for (let i = 0; i < s.length; i++) {
-    expandPointer(i, i + 1); // palindrome 문자열이 짝수일경우
-    expandPointer(i - 1, i + 1); // palindrome 문자열이 홀수일경우
+    expandPointer(i, i + 1)
+    expandPointer(i - 1, i + 1)
   }
-  
-  return s.slice(sp, sp + max)
-};
+
+  return s.slice(startPoint, startPoint + longestLength)
+}
 
 module.exports = longestPalindrome;
